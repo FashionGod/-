@@ -1,0 +1,21 @@
+<view wx:if="{{!record}}" class="nothing">
+  <text>无记录</text>
+</view>
+<scroll-view wx:else class="cards">
+  <view data-index="{{index}}" wx:for="{{record}}" wx:key="{{index}}">
+    <view class=" card "  data-index="{{index}}" wx:key="{{index}}" bindtap="showRecord">
+      <view class="word">
+        <view class="part1">
+          <view class="fontSizeCorrect">{{item.trueNumber}}</view>
+          <view class="fontText">答对数量</view>
+        </view>
+        <text class="slash">/</text>
+        <view class="part1">
+          <view class="fontSizeAll">5</view>
+          <view class="fontText">总题量</view>
+        </view>
+      </view>
+      <view class="time">{{item.time}}</view>
+    </view>
+  </view>
+</scroll-view>

@@ -1,0 +1,11 @@
+<view class='page'>
+  <navigator url='practice/practice' open-type='navigateTo' class='itemgrid' hovor-class='itemgrid_active'>
+    <view class="questionCss">
+      <image class='iconImg' src="../../images/function/exercise.png"></image>
+      <text class="functionTitle">我要做题</text>
+      <view class="right">
+        <image class='rightIcon' src="../../images/function/rightIcon.png"></image>
+      </view>
+    </view>
+  </navigator>
+</view>

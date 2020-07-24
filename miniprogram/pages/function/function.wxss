@@ -1,0 +1,33 @@
+
+.iconImg{
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 40rpx; 
+}
+.rightIcon{
+  width: 50rpx;
+  height: 50rpx;
+  margin-left: 430rpx; 
+}
+.functionTitle{
+  font-size: 35rpx;
+  margin-left: 30rpx; 
+ 
+}
+.questionCss{
+  background: #f5f5fc;
+  width: 100%;
+  height: 110rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.othersCss{
+  margin-top: 20rpx;
+  background: #f5f5fc;
+  width: 100%;
+  height: 100rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

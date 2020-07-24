@@ -1,0 +1,13 @@
+<view class="view">
+  <view class="title">
+    <text>关于创足迹</text>
+  </view>
+
+  <view class="content ">
+    <text class="text">欢迎你使用我们的小程序。
+我们是一个由七个人组成的，有组织，有纪律，作风优良，能打胜仗的团队。
+如果你在体验中遇到了什么问题，欢迎通过反馈功能告诉我们。我们将尽快解决，感谢大家的支持！
+
+</text>
+  </view>
+</view>

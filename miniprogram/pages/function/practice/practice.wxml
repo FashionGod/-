@@ -1,0 +1,70 @@
+<view class="container">
+  <view class="container">
+    <swiper current="{{current}}">
+      <swiper-item class="typeContent" wx:for="{{subjectList}}" wx:for-item="listItem" wx:for-index="listIndex" wx:key="{{item._id}}">
+        <view class="windows">
+          <view class="title" wx:if="{{listItem.type==1}}">
+            <image class="danxuanIcon" src='../../../images/function/practice/radioIcon.png'></image>{{(listIndex+1)+'、'+listItem.title}}</view>
+        </view>
+        <view class="windows">
+          <view class="title" wx:if="{{listItem.type==2}}">
+            <image class="danxuanIcon" src='../../../images/function/practice/judgeIcon.png'></image>{{(listIndex+1)+'、'+listItem.title}}</view>
+        </view>
+        <view wx:for="{{listItem.question}}" wx:key="{{index}}" class="option">
+          <!-- 单选题的渲染 -->
+          <view wx:if="{{listItem.type==1}}" bindtap="option" data-list-index="{{listIndex}}" data-index="{{index}}" class="optionWrap {{listItem.stateList[index]}} {{showAnswer&&index == listItem.answer-1?'answer':''}}">
+            {{zimu[index]}}
+          </view>
+          <!-- 判断题的渲染 -->
+          <view wx:if="{{listItem.type==2}}" bindtap="option" data-list-index="{{listIndex}}" data-index="{{index}}" class="optionWrap {{listItem.stateList[index]}} {{showAnswer&&index == listItem.answer-1?'answer':''}}">
+            {{duicuo[index]}}
+          </view>
+          <view class="content" bindtap="option" data-list-index="{{listIndex}}" data-index="{{index}}">
+            {{item}}
+          </view>
+        </view>
+        <view class="windows">
+          <image class="radioIcon" src='../../../images/function/practice/comIcon.png'></image>
+          <text class="questionFrom">本题出自——{{listItem.theme}}专题
+       </text>
+        </view>
+        <view class="windowsType">
+          <image class="radioIcon" src='../../../images/function/practice/numIcon.png'></image>
+          <text class="questionFrom">{{listIndex+1}}/{{subjectList.length}}</text>
+        </view>
+        <button class="submitButton" bindtap="submitBButton" wx:if="{{listIndex==subjectList.length-1&&num=='1'}}">交卷</button>
+      </swiper-item>
+    </swiper>
+  </view>
+  <!-- -------------------这里是做题结果页面----------------------------------------- -->
+  <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal==1}}">结果</view>
+  <view class="modalDlg" wx:if="{{showModal==1}}">
+    <image class='headImage' src='{{avatarUrl}}'></image>
+    <view class='wechatID'>{{userInfo.nickName}}</view>
+    <!-- 这里是用户微信ID -->
+    <view class="rating">
+      <view class='ratingNum'>您答对了</view>
+    </view>
+    <view class='number'>{{trueNumber}}/{{subjectList.length}}</view>
+    <view class="courageText" wx:if="{{trueNumber==0}}">
+    <text>一题都没对，要努力了啊！</text>
+    </view>
+    <view class="courageText" wx:elif="{{trueNumber==1}}">
+    <text>只对了一题，还要加油！</text>
+    </view>
+    <view class="courageText" wx:elif="{{trueNumber==2}}">
+    <text>算你运气好点!</text>
+    </view>
+    <view class="courageText" wx:elif="{{trueNumber==3}}">
+    <text>还差一题就及格了，再试一次？</text>
+    </view>
+    <view class="courageText" wx:elif="{{trueNumber==4}}">
+    <text>嗯，继续加油还有进步空间</text>
+    </view>
+    <view class="courageText" wx:elif="{{trueNumber==5}}">
+    <text>你是东软不可多得的人才！</text>
+    </view>
+    <button class="answerButton" bindtap="showAnswer">查看答案</button>
+    <button class="backButton" bindtap='backToFunction'>返回</button>
+  </view>
+</view>

@@ -1,0 +1,28 @@
+<!--miniprogram/pages/admin/addArticle/addArticle.wxml-->
+<view class="container">
+  <form bindsubmit="bindFormSubmit">
+    <view>
+      <view class="item">
+        <view class="title">标题</view>
+        <textarea name="title" value="{{title}}"  auto-height placeholder="输入标题" />
+      </view>
+      <view class="item">
+        <view class="title">介绍</view>
+        <textarea name="introduce" value="{{introduce}}" auto-height placeholder="输入介绍" />
+      </view>
+      <view class="item">
+        <view class="title">关键字</view>
+        <textarea name="keyword" value="{{keyword}}" auto-height placeholder="输入关键字 空格区分" />
+      </view>
+      <view class="item">
+        <view class="title">文章内容</view>
+        <view class="buttons">
+          <button wx:if="{{!article}}" type="primary" bindtap="onUpdate">上传</button>
+          <button wx:if="{{article}}" type="warn" bindtap="onDelete">删除</button>
+          <button wx:if="{{article}}" bindtap="onView">预览</button>
+        </view>
+      </view>
+    </view>
+    <button class="submit" form-type="submit">提交</button>
+  </form>
+</view>

@@ -1,0 +1,44 @@
+<!--components/article/index.wxml-->
+<view class="body">
+  <swiper wx:if="{{articleData.imgUrls.length}}" indicator-dots="true" autoplay="true" circular="true">
+    <block wx:for="{{articleData.imgUrls}}" wx:key="{{index}}">
+      <swiper-item>
+        <image src="{{item}}" mode="aspectFill" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="title">{{articleData.title}}</view>
+  <view class="introduce {{txtHidden?'text-hidden':'text-show'}}">{{articleData.introduce}}</view>
+  <view class="arrow" wx:if="{{showArrow}}" catchtap="txtToggle">
+    <image class="{{txtHidden?'arrow-down':'arrow-up'}}"></image>
+  </view>
+  <view wx:if="{{articleData.hotComment.userInfo.avatarUrl}}" class="comment">
+    <view class="icon">
+      <image src="/images/icons/hot.png" />
+      <view>热评</view>
+    </view>
+    <view class="commentContent">
+      <image src="{{articleData.hotComment.userInfo.avatarUrl}}" class="avatar" />
+      <view class="content">
+        <view class="tex_1">{{articleData.hotComment.userInfo.nickName}}</view>
+        <view class="tex_2">：{{articleData.hotComment.content}}</view>
+      </view>
+    </view>
+    <view class="./likeCount">{{articleData.hotComment.likeCount}}赞</view>
+  </view>
+  <view class="line">
+    <view class="item">
+      <image src="/images/icons/good@gray.png" />
+      <view>{{articleData.likeCount}}</view>
+    </view>
+    <view class="item">
+      <image src="/images/icons/comments@gray.png" />
+      <view>{{articleData.commentCount}}</view>
+    </view>
+    <view class="item">
+      <image src="/images/icons/collect@gray.png" />
+      <view>{{articleData.collectCount}}</view>
+
+    </view>
+  </view>
+</view>

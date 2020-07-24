@@ -1,0 +1,217 @@
+
+page {
+  height: 100%;
+  width: 100%;
+  background-color: white;
+}
+
+scroll-view {
+  width: 100%;
+  height: 100vh;
+
+}
+
+.rich-text {
+  margin: 30rpx;
+  margin-top: 0rpx;
+  padding-bottom: 200rpx;
+}
+
+
+.container {
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+}
+
+.container .comment {
+  flex-shrink: 0;
+  margin-top: 50rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: white;
+  width: 100%;
+  padding-bottom: 200rpx;
+}
+
+.container .comment .titleBar {
+  width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  margin-left: 30rpx;
+  background: #f2f2f2;
+  padding: 0 30rpx;
+  font-size: 30rpx;
+  line-height: 48rpx;
+  color: #a1a8b3;
+}
+
+.container .comment .item {
+  width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  border-top: 1rpx solid #ededee;
+  padding: 20rpx 0 0 18rpx;
+}
+
+.container .comment .item .titleWrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.container .comment .item .titleWrap .avatar {
+  height: 80rpx;
+  width: 80rpx;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 2rpx solid #f0f0f0;
+  vertical-align: middle;
+}
+
+.container .comment .item .titleWrap .authorWrap {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10rpx;
+}
+
+.container .comment .item .titleWrap .authorWrap .author {
+  color: #a1a8b3;
+  font-size: 28rpx;
+}
+
+.container .comment .item .titleWrap .authorWrap .time {
+  color: #c5cad2;
+  font-size: 22rpx;
+}
+
+.container .comment .item .text {
+  display: flex;
+  word-break: break-all;
+  font-size: 32rpx;
+  padding: 10rpx 44rpx 30rpx 90rpx;
+}
+
+.container .comment .item .reply {
+  display: flex;
+  flex-direction: column;
+  background-color: #f1f1f1;
+  margin-left: 90rpx;
+}
+
+.container .comment .item .reply .item {
+  /* flex-shrink: 0; */
+  display: flex;
+  flex-direction: column;
+  border-top: 1rpx solid #ededee;
+  padding: 10rpx 0rpx 0rpx 9rpx;
+}
+
+.container .comment .item .reply .text {
+  padding: 10rpx 44rpx 10rpx 90rpx;
+}
+
+.container .comment .item .titleWrap .iconWrap {
+  position: absolute;
+  right: 30rpx;
+  display: flex;
+}
+
+.container .comment .item .titleWrap .iconWrap .iconItem {
+  display: flex;
+  margin-left: 20rpx;
+  align-items: center;
+}
+
+.icon {
+  height: 40rpx;
+  width: 40rpx;
+  flex-shrink: 0;
+}
+
+.container .comment .item .titleWrap .iconWrap .iconItem .count {
+  color: #a6a6a8;
+  font-size: 28rpx;
+  margin-left: 5rpx;
+}
+
+.control {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-top: 1rpx solid #ededee;
+  position: fixed;
+  bottom: 0;
+  padding: 20rpx;
+  width: 100%;
+  padding-bottom: 50rpx;
+}
+
+.control .replySb {
+  display: flex;
+  margin-bottom: 10rpx;
+}
+
+.control .replySb .name {
+  margin-left: 20rpx;
+  font-weight: bold;
+  width: 100%;
+}
+
+.control .replySb .text {
+  flex-shrink: 0;
+}
+
+.control .replySb .cancle {
+  margin-right: 40rpx;
+}
+
+.control .repley {
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center;
+}
+
+.control .repley textarea {
+  margin-left: 20rpx;
+  width: 100%;
+}
+
+.control .repley .button {
+  display: flex;
+  color: #4d9bf4;
+  margin-right: 40rpx;
+  flex-shrink: 0;
+}
+
+.control .buttonItem {
+  /* flex-shrink: 0; */
+  margin-left: 10rpx;
+}
+
+.control2 {
+  position: fixed;
+  top: 50rpx;
+  right: 20rpx;
+  background-color: whitesmoke;
+  border-radius: 100rpx;
+  padding: 10rpx;
+  /* padding-top: 20rpx; */
+  box-sizing: border-box;
+  box-shadow: 8rpx 8rpx 8rpx rgba(114, 130, 138, 0.2);
+}
+
+.control2 .item .icon {
+  width: 64rpx;
+  height: 64rpx;
+}
+
+.loading {
+  margin: 50rpx 0 50rpx 0;
+}
+
+.commentTextarea{
+  
+}

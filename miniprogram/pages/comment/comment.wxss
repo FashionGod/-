@@ -1,0 +1,142 @@
+page {
+  background: rgba(188, 188, 188, 0.17);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  margin-top: 20rpx;
+}
+
+.box {
+  background-color: white;
+  width: 672rpx;
+  padding: 20rpx;
+  margin: 0 auto 20rpx;
+  border-radius: 6rpx;
+}
+
+.view1 {
+  display: flex;
+  flex-direction: row;
+  width: 600rpx;
+  font-size: 24rpx;
+  color: rgba(36, 19, 50, 1);
+}
+
+.head1 {
+  max-width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+}
+
+.nameTime {
+  min-width: 160rpx;
+  margin-left: 15rpx;
+  align-self: center;
+}
+
+.nickName1 {
+  max-width: 150rpx;
+  font-size: 24rpx;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: rgba(36, 19, 50, 1);
+}
+
+.time {
+  margin-top: 10rpx;
+  font-size: 20rpx;
+  color: #000;
+}
+
+.title {
+  width: 350rpx;
+  margin-left: 65rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 25rpx;
+  color: rgba(36, 19, 50, 1);
+}
+
+.unRead {
+  position: absolute;
+  right: 40rpx;
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 100%;
+  background-color: red;
+}
+
+.view2 {
+  width: 600rpx;
+  margin-left: 60rpx;
+}
+
+.comment1 {
+  margin-top: 10rpx;
+  word-break: break-all;
+  font-size: 25rpx;
+  color: rgba(36, 19, 50, 1);
+}
+
+.view3 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 632rpx;
+  height: 50rpx;
+  padding: 5rpx;
+  margin-top: 5rpx;
+  background-color: rgba(237, 237, 237, 0.85);
+}
+
+.nickName2 {
+  max-width: 75rpx;
+  margin-left: 10rpx;
+  font-size: 23rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: rgba(36, 19, 50, 1);
+}
+
+.head2 {
+  max-width: 37rpx;
+  height: 37rpx;
+  margin-left: 3rpx;
+  border-radius: 50%;
+}
+
+.comment2 {
+  max-width: 550rpx;
+  font-size: 23rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: rgba(36, 19, 50, 1);
+}
+
+.view4 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 12rpx;
+  font-size: 20rpx;
+  color: rgba(36, 19, 50, 1);
+}
+
+.view4 image {
+  width: 30rpx;
+  height: 28rpx;
+  margin-right: 20rpx;
+}
+
+.view4 text {
+  align-items: center;
+  margin-right: 60rpx;
+}

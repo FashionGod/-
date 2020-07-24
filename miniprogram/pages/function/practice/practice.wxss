@@ -1,0 +1,231 @@
+page {
+  width: 100%;
+  height: 100%;
+}
+
+.typeContent {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: scroll;
+}
+
+.danxuanIcon {
+  width: 60rpx;
+  height: 40rpx;
+  /* margin-top: 30rpx; */
+  margin-right: 10rpx;
+  justify-items: center;
+}
+
+.radioIcon {
+  width: 50rpx;
+  height: 50rpx;
+  margin-top: 15rpx;
+  margin-left: 50rpx;
+  justify-items: center;
+}
+
+.windows {
+  display: flex;
+  /* flex-direction: row; */
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.windowsType {
+  display: flex;
+  /* flex-direction: row; */
+  align-items: center;
+  justify-content: flex-start;
+  bottom: 30rpx;
+}
+
+.questionFrom {
+  font-size: 30rpx;
+  color: #999;
+  margin-left: 15rpx;
+  margin-top: 10rpx;
+}
+
+.title {
+  margin: 30rpx;
+  font-size: 35rpx;
+  margin-bottom: 0rpx;
+  text-indent: 15px;
+  /* margin-left: 20rpx; */
+  align-items: center;
+  justify-content: flex-start;
+  justify-items: center;
+  /* font-weight: lighter; */
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  background: #f5f5fc;
+}
+
+.icon {
+  width: 60rpx;
+}
+
+swiper {
+  width: 100%;
+  height: 100%;
+}
+
+swiper-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+.option {
+  display: flex;
+  padding: 50rpx;
+}
+
+.optionWrap {
+  flex-shrink: 0;
+  font-size: 35rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 60rpx;
+  height: 60rpx;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+
+.submitButton {
+  width: 300rpx;
+  height: 70rpx;
+  position: absolute;
+  bottom: 50rpx;
+  background-color: #4d9bf4;
+  color: white;
+  border-radius: 6rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+}
+
+.content {
+  margin-left: 20rpx;
+  margin-top: 10rpx;
+}
+
+.activate {
+  background-color: #4d9bf4;
+}
+
+.answer {
+  background-color: #4d9bf4 !important;
+}
+
+.error {
+  background-color: red;
+}
+
+/* -------------以下是结果页面----------------- */
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  background: #000;
+  z-index: 9000;
+  opacity: 0.7;
+}
+
+.modalDlg {
+  width: 510rpx;
+  height: 820rpx;
+  top: 150rpx;
+  position: fixed;
+  z-index: 9999;
+  margin-left: 120rpx;
+  background-color: #fff;
+  border-radius: 36rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.headImage {
+  margin-top: 100rpx;
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 120rpx;
+}
+
+.close {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 90rpx;
+  position: fixed;
+  margin-top: 830rpx;
+  right: 330rpx;
+  z-index: 9999;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row;
+}
+
+.courageText {
+  font-size: 40rpx;
+}
+
+.ratingNum {
+  font-size: 72rpx;
+}
+
+.wechatID {
+  font-size: 37rpx;
+}
+
+.text2 {
+  color: #999;
+  font-size: 30rpx;
+}
+
+.number {
+  font-size: 100rpx;
+  color: red;
+}
+
+.answerButton {
+  width: 300rpx;
+  height: 70rpx;
+  position: absolute;
+  bottom: 35rpx;
+  margin-bottom: 120rpx;
+  background-color: #4d9bf4;
+  color: white;
+  border-radius: 6rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.backButton {
+  width: 300rpx;
+  height: 70rpx;
+  position: absolute;
+  bottom: 35rpx;
+  margin-bottom: 30rpx;
+  background-color: #4d9bf4;
+  color: white;
+  border-radius: 6rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

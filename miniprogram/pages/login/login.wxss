@@ -1,0 +1,69 @@
+/* miniprogram/pages/login/login.wxss */
+
+page {
+  background-color: white;
+}
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.view1 {
+  margin-top: 100rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.view1 view {
+  margin-top: 20rpx;
+}
+
+.view1 image {
+  height: 128rpx;
+  width: 128rpx;
+  border-radius: 100%;
+  border: 2rpx solid gainsboro;
+}
+
+.divLine {
+  margin-top: 40rpx;
+  margin-bottom: 40rpx;
+  background: gainsboro;
+  width: 100%;
+  height: 2rpx;
+}
+
+.view2 {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20rpx;
+  padding-right: 20rpx;
+}
+
+.view2 .title {
+}
+
+.view2 .content {
+  padding: 10rpx;
+  font-size: 28rpx;
+  color: grey;
+}
+
+.view3 {
+  margin-top: 40rpx;
+}
+
+.view4 {
+  margin-top: 80rpx;
+  display: flex;
+  flex-direction: row;
+  
+}
+
+.view4 button {
+  width: 300rpx;
+}

@@ -1,0 +1,16 @@
+<!--pages/admin/function/function.wxml-->
+
+<view>
+  <view class="lists">
+    <view bindtap="onClick" data-index="2" class="item">
+      <image src="/images/icons/upload.png" mode="scaleToFill" />
+      <text>上传文章</text>
+      <text class="arrow"></text>
+    </view>
+    <view bindtap="onClick" data-index="3" class="item">
+      <image src="/images/icons/setting.png" mode="scaleToFill" />
+      <text>校准文章信息</text>
+      <text class="arrow"></text>
+    </view>
+  </view>
+</view>

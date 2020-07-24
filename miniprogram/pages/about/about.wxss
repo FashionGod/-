@@ -1,0 +1,29 @@
+/* miniprogram/pages/my/about/about.wxss */
+
+page {
+  background: rgba(188, 188, 188, 0.17);
+}
+
+.view {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 792rpx;
+  margin: 60rpx 64rpx 50rpx 64rpx;
+  background-color: #fff;
+  box-shadow: 0rpx 0rpx 0rpx 0rpx #707070;
+}
+
+.title {
+  margin-top: 60rpx;
+  text-size-adjust: 300rpx;
+  font-size: 40rpx;
+  color: gray;
+}
+
+.content {
+  margin: 60rpx 80rpx 0rpx 80rpx;
+  font-size: 30rpx;
+  color: gray;
+}

@@ -1,0 +1,35 @@
+<!--miniprogram/pages/article/article.wxml-->
+<view>
+  <view wx:if="{{!searchPanel}}" class="search">
+    <view class="header">
+      <view class='box' bind:tap="onActivateSearch">
+        <image src="/images/icons/search@gray.png" />
+        <text>搜索</text>
+      </view>
+    </view>
+  </view>
+  <search-cmp wx:if="{{searchPanel}}" more="{{searchMore}}" bind:cancel="onCancel" />
+  <view wx:if="{{!searchPanel}}" class="container">
+    <!-- <search-cmp  bind:cancel="onCancel" /> -->
+    <swiper class="swiper" indicator-dots="true" autoplay="true" circular="true" previous-margin="80rpx" next-margin="80rpx" bindchange="handleChange">
+      <swiper-item wx:for="{{hotArticleList}}" wx:key="{{index}}" bindtap="onViewHot" data-index="{{index}}">
+        <view class="slide-image {{currentIndex == index ? 'active': ''}}">
+          <view class="title">{{item.title}}</view>
+          <image src="{{item.imgUrls[0]}}" mode="aspectFill" />
+        </view>
+      </swiper-item>
+    </swiper>
+    <view class="sign">
+    <image  src="/images/icons/book.png"></image>
+    <text>猜你喜欢>></text>
+    </view>
+    <view class="article">
+      <view class="item" bindtap="onView" data-index="{{index}}" wx:for="{{articles}}" wx:key="{{index}}">
+        <article-cmp articleData="{{item}}" />
+        <image wx:if="{{isAdmin}}" data-index="{{index}}" catchtap="onDeleteArticle" class="delete" src="/images/icons/delete@red.png"></image>
+      </view>
+    </view>
+    <loading-cmp wx:if="{{loading}}" class="loading" />
+    <view wx:if="{{showEnd}}" class="loading">人家是有底线的啦</view>
+  </view>
+</view>

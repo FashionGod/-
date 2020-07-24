@@ -1,0 +1,23 @@
+<!--miniprogram/pages/login/login.wxml-->
+<view class="container">
+
+  <view class="view1">
+    <image src="/images/more/logo.png"></image>
+    <view>创足迹</view>
+    <view style="color:grey;">大连东软信息学院</view>
+  </view>
+  <view class="divLine"></view>
+  <view class="view2">
+    <view class="view3">
+      <view class="title">注意事项:</view>
+      <view class="content">- 本小程序属大连东软信息学院教学辅助小程序</view>
+      <view class="content">- 获取您的信息是为了实名评论，避免恶意评论，创造规范的阅读环境。</view>
+      <view class="content">- 本小程序不会使用用户信息做一切非法犯罪活动</view>
+      <view style="font-weight: bold;" class="content">- 不授权状态下也可以正常使用小程序</view>
+    </view>
+  </view>
+  <view class="view4">
+    <button bindtap="exit">拒绝</button>
+    <button type="primary" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">允许</button>
+  </view>
+</view>

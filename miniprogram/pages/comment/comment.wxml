@@ -1,0 +1,27 @@
+<scroll-view>
+  <view class="card">
+    <view class="box" bindtap="articleDetail" wx:for="{{comments}}" data-index="{{index}}">
+      <view class="view1">
+        <image class="head1" src="{{item.avatarUrl}}"></image>
+        <view class="nameTime">
+          <view class="nickName1">{{item.nickName}}</view>
+          <view class="time">{{item.createTime}}</view>
+        </view>
+        <text class="title">{{item.articleTitle}}</text>
+        <view class="unRead" wx:if="{{item.unread}}"></view>
+      </view>
+      <view class="view2">
+        <text class="comment1">{{item.content}}</text>
+      </view>
+      <view class="view3" wx:if="{{item.farther.content}}">
+        <image class="head2" src="{{item.farther.avatarUrl}}"></image>
+        <text class="nickName2">{{item.farther.nickName}}</text>
+        <text class="comment2"> ：{{item.farther.content}}</text>
+      </view>
+      <view class="view4">
+        <image class="img" catchtap="delete" data-index="{{index}}" data-type="1" src="/images/icons/delete.png"></image>
+        <text class="text" catchtap="delete" data-index="{{index}}" data-type="1">删除</text>
+      </view>
+    </view>
+  </view>
+</scroll-view>

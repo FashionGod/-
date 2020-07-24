@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "article-cmp": "/components/article/index",
+    "search-cmp": "/components/search/search",
+    "loading-cmp": "/components/loading/index"
+  },
+  "enablePullDownRefresh": true
+}

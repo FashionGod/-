@@ -1,0 +1,85 @@
+<scroll-view bindscrolltolower="onLpwer" scroll-y="true" enable-back-to-top="true" scroll-into-view="{{toView}}">
+
+  <view class="container">
+    <rich-text class="rich-text" style="{{commentList.length?'padding-bottom: 0rpx;':''}}" nodes="{{nodes}}"></rich-text>
+    <view wx:if="{{commentList.length>0&&showAll}}" class="comment">
+      <view class="titleBar">
+        <view>评论列表</view>
+      </view>
+      <view id="{{'c'+item._id}}" wx:for="{{commentList}}" wx:key="{{index}}" class="item">
+        <view class="titleWrap">
+          <image class="avatar" src="{{item.userInfo.avatarUrl}}"></image>
+          <view class="authorWrap">
+            <view class="author">{{item.userInfo.nickName}}</view>
+            <view class="time">{{item.formatTime}}</view>
+          </view>
+          <view class="iconWrap">
+            <view wx:if="{{item.canDelete||isAdmin}}" bindtap="onDeleteComment" data-id="{{item._id}}" data-index="{{index}}" class="iconItem">
+              <image class="icon" src="/images/icons/delete@red.png"></image>
+            </view>
+            <view data-replyId="{{item._id}}" data-replyName="{{item.userInfo.nickName}}" bindtap="onReplySb" class="iconItem">
+              <image class="icon" src="/images/icons/comments@gray.png"></image>
+              <!-- <view class="count">3</view> -->
+            </view>
+
+            <view bindtap="onLikeComment" data-id="{{item._id}}" data-index="{{index}}" class="iconItem">
+              <image class="icon" src="{{item.liked?likeIcon:disLikeIcon}}"></image>
+              <view class="count">{{item.likeCount}}</view>
+            </view>
+          </view>
+        </view>
+        <view class="text">
+          {{item.content}}
+        </view>
+        <view class="reply">
+          <block wx:for="{{item.replyList}}" wx:key="{{index}}" wx:for-index="replyIndex">
+            <view class="item">
+              <view class="titleWrap">
+                <image class="avatar" src="{{item.userInfo.avatarUrl}}"></image>
+                <view class="authorWrap">
+                  <view class="author">{{item.userInfo.nickName}}</view>
+                  <view class="time">{{item.formatTime}}</view>
+                </view>
+                <view class="iconWrap">
+                  <view wx:if="{{item.canDelete||isAdmin}}" bindtap="onDeleteComment" data-id="{{item._id}}" data-index="{{index}}" data-replyindex="{{replyIndex}}" class="iconItem">
+                    <image class="icon" src="/images/icons/delete@red.png"></image>
+                  </view>
+                  <view bindtap="onLikeComment" data-id="{{item._id}}" data-index="{{index}}" data-replyindex="{{replyIndex}}" class="iconItem">
+                    <image class="icon" src="{{item.liked?likeIcon:disLikeIcon}}"></image>
+                    <view class="count">{{item.likeCount}}</view>
+                  </view>
+                </view>
+              </view>
+              <view class="text">
+                {{item.content}}
+              </view>
+            </view>
+          </block>
+        </view>
+      </view>
+      <loading-cmp wx:if="{{loading}}" class="loading" />
+    </view>
+  </view>
+</scroll-view>
+<view wx:if="{{showAll}}" class="control2">
+  <view bindtap="onLikeArticle" class="item">
+    <image class="icon" src="{{liked?likeIcon:disLikeIcon}}"></image>
+  </view>
+  <view bindtap="onCollect" class="item">
+    <image class="icon" src="{{collectd?collectIcon:disCollectionIcon}}"></image>
+  </view>
+</view>
+<view wx:if="{{showAll}}" class="control">
+  <view wx:if="{{replyId}}" class="replySb">
+    <view class="text">正在回复</view>
+    <view class="name">{{replyName}}</view>
+    <view bindtap="onCancleReplySb" class="text cancle">取消</view>
+  </view>
+  <view class="repley">
+    <image class="icon" src="/images/icons/comments@gray.png"></image>
+    <textarea fixed="true" disabled="{{!userInfo}}" cursor-spacing="20" class="commentTextarea" focus="{{focus}}" value="{{commentValue}}" bindinput="bindinput" auto-height placeholder="{{userInfo?'添加你的评论...':'需要登录才可以进行评论'}}" />
+    <view class="button">
+      <view bindtap="onSubmitComment" class="buttonItem">发布</view>
+    </view>
+  </view>
+</view>

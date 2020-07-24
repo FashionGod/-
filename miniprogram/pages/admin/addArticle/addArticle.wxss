@@ -1,0 +1,32 @@
+/* miniprogram/pages/admin/addArticle/addArticle.wxss */
+
+.item {
+  padding: 20rpx;
+  background-color: white;
+  border-bottom: 1rpx solid #d9d9d9;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.item .title {
+  color: black;
+  flex-shrink: 0;
+}
+
+.buttons {
+  display: flex;
+}
+
+.buttons button {
+  margin-left: 20rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 32rpx;
+}
+
+.submit {
+  margin: 20rpx;
+  background: linear-gradient(45deg, #5574f7, #60c3ff);
+  color: white;
+}
