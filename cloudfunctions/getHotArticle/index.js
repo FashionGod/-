@@ -16,7 +16,7 @@ exports.main = async(event, context) => {
     .group({
       _id: '$_id',
       totalCount: $.sum(
-        $.sum(['$commentCount', '$collectCount', '$likeCount'])
+        $.sum(['$commentCount', '$collectionCount', '$likeCount'])
       )
     })
     .sort({

@@ -20,7 +20,7 @@ exports.main = async(event, context) => {
     .then(res => {
       return db.collection('article').doc(event.articleId).update({
         data: {
-          collectCount: _.inc(1)
+          collectionCount: _.inc(1)
         }
       })
     })

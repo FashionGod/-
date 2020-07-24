@@ -86,7 +86,7 @@ exports.main = async (event, context) => {
               _id: v,
             }).update({
               data: {
-                collectCount: res.data.length,
+                collectionCount: res.data.length,
                 // hotComment:{}只有在完全洗白情况下开启
               },
             })

@@ -23,7 +23,7 @@ exports.main = async(event, context) => {
           .doc(event.articleId)
           .update({
             data: {
-              collectCount: _.inc(-1)
+              collectionCount: _.inc(-1)
             }
           })
       }

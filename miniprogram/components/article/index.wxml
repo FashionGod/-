@@ -37,7 +37,7 @@
     </view>
     <view class="item">
       <image src="/images/icons/collect@gray.png" />
-      <view>{{articleData.collectCount}}</view>
+      <view>{{articleData.collectionCount}}</view>
 
     </view>
   </view>

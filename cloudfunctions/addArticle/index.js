@@ -19,7 +19,7 @@ exports.main = async(event, context) => {
         hotComment: {},
         likeCount: 0,
         commentCount: 0,
-        collectCount: 0,
+        collectionCount: 0,
         poster: wxContext.OPENID,
         createTime: db.serverDate()
       }
