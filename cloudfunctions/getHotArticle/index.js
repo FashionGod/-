@@ -9,7 +9,7 @@ const _ = db.command
 const $ = db.command.aggregate
 
 // 云函数入口函数
-exports.main = async(event, context) => {
+exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
   return db.collection('article')
     .aggregate()
