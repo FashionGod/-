@@ -40,7 +40,7 @@ Page({
     showAll: false,
     userInfo: null
   },
-  onShareAppMessage: function(res) {
+  onShareAppMessage: function (res) {
     if (this.data.mode == 1) {
       return {
         title: app.globalData.cArticle.title,
@@ -49,7 +49,7 @@ Page({
       }
     }
   },
-  onLoad: function(options) {
+  onLoad: function (options) {
     this.setData({
       userInfo: app.globalData.userInfo,
       isAdmin: app.globalData.isAdmin
@@ -148,7 +148,7 @@ Page({
       app.globalData.shareBack = true
     }
   },
-  onShow: function() {
+  onShow: function () {
     this.setData({
       userInfo: app.globalData.userInfo,
       isAdmin: app.globalData.isAdmin
@@ -162,7 +162,7 @@ Page({
         }).then(res => {
           // get temp file path
           this.data.shareImg = res.tempFilePath
-          
+
           console.log(res.tempFilePath)
         }))
       } else {
@@ -170,12 +170,12 @@ Page({
       }
     })
   },
-  bindinput: function(e) {
+  bindinput: function (e) {
     this.setData({
       commentValue: e.detail.value
     })
   },
-  onReplySb: function(e) {
+  onReplySb: function (e) {
     if (!this.data.userInfo) {
       return
     }
@@ -188,13 +188,13 @@ Page({
     console.log(this.data.toView)
 
   },
-  onCancleReplySb: function(e) {
+  onCancleReplySb: function (e) {
     this.setData({
       replyId: '',
       replyName: ''
     })
   },
-  onSubmitComment: function(e) {
+  onSubmitComment: function (e) {
     if (!this.data.userInfo) {
       wx.showToast({
         title: '需要登录才可以评论',
@@ -235,34 +235,35 @@ Page({
     }
 
     p.then(res => {
-        return this.loadMore({
-          init: true
-        })
-      })
-      .then(res => {
-        this.onCancleReplySb()
-        this.setData({
-          commentValue: ''
-        })
-        wx.showToast({
-          title: '评论成功'
-        })
-      })
-      .catch(err => {
-        wx.showToast({
-          title: '发生了错误',
-          icon: 'none'
-        })
+        if (res.result.success != true) {
+          wx.showToast({
+            title: res.result.err,
+            icon: 'none'
+          })
+        } else {
+          this.loadMore({
+            init: true
+          }).then(res => {
+            this.onCancleReplySb()
+            this.setData({
+              commentValue: ''
+            })
+            wx.showToast({
+              title: '评论成功'
+            })
+          })
+        }
+
       })
   },
-  onLpwer: function(e) {
+  onLpwer: function (e) {
     if (this.data.mode == 1) {
       this.loadMore({
         init: false
       })
     }
   },
-  loadMore: function({
+  loadMore: function ({
     init = false
   }) {
     if (this.data.loading) {
@@ -308,7 +309,7 @@ Page({
 
       })
   },
-  onDeleteComment: function(e) {
+  onDeleteComment: function (e) {
     let index = e.currentTarget.dataset.index
     let replyindex = e.currentTarget.dataset.replyindex
     let content

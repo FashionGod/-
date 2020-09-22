@@ -8,8 +8,17 @@ const db = cloud.database()
 const _ = db.command
 
 // 云函数入口函数
-exports.main = async(event, context) => {
+exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
+  
+  // 内容安全监测
+  let res = await cloud.openapi.security.msgSecCheck({
+    content: event.content
+  })
+  if (res != 0) {
+    return handleErr('含有敏感内容,无法发布')
+  }
+
   return db.collection('comment').add({
       data: {
         _openid: wxContext.OPENID,
@@ -32,7 +41,7 @@ exports.main = async(event, context) => {
     .then(res => {
       return handleSuccess(res)
     }).catch(err => {
-      handleErr(err)
+      return handleErr(err)
     })
 }
 
