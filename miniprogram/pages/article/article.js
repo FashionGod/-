@@ -132,7 +132,7 @@ Page({
       return articleModel.getArticleInIds(this.getArticleId(this.data.start))
         .then(res => {
           res.forEach(v => {
-            v.imgUrls = v.imgUrls.slice(0, 3)
+            v.imgUrls = v.imgUrls.slice(0, 1)
           })
           let articles = this.data.articles.concat(res)
           if (init) {
@@ -180,7 +180,6 @@ Page({
   },
   onDeleteArticle: function(e) {
     let index = e.currentTarget.dataset.index
-    console.log()
     let title = this.data.articles[index].title
     let articleId = this.data.articles[index]._id
     wx.showModal({
