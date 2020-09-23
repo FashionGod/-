@@ -10,14 +10,20 @@ const _ = db.command
 // 云函数入口函数
 exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
-  
+
   // 内容安全监测
-  let res = await cloud.openapi.security.msgSecCheck({
-    content: event.content
-  })
-  if (res != 0) {
+  console.log(event.content)
+  try {
+    const res = await cloud.openapi.security.msgSecCheck({
+      content: event.content
+    })
+    if (res.errCode != 0) {
+      return handleErr('含有敏感内容,无法发布')
+    }
+  } catch (err) {
     return handleErr('含有敏感内容,无法发布')
   }
+
 
   return db.collection('comment').add({
       data: {
