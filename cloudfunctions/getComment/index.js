@@ -9,7 +9,7 @@ const _ = db.command
 const $ = db.command.aggregate
 
 // 云函数入口函数
-exports.main = async(event, context) => {
+exports.main = async (event, context) => {
   const wxContext = cloud.getWXContext()
   let limit = 20
   let data = []
@@ -109,6 +109,7 @@ function _handleLike(articleId, odata, openId) {
         type: '$type'
       })
     })
+    .limit(9999)
     .end()
     .then(res => {
       // 遍历所有评论
@@ -152,6 +153,7 @@ function _getAllReply(articleId, ids) {
         type: '$type'
       })
     })
+    .limit(9999)
     .end().then(res => {
       let tempData = []
       res.list.forEach(v => {
